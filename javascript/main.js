@@ -45,6 +45,7 @@ var i18n = {
       about_degree_value: "Software Engineering (In progress)",
       about_location_label: "Location",
       about_cv_btn: "Download CV",
+      about_cv_url: "CV/cv_daniel_bobadilla_english.pdf",
       // What I Do
       whatido_backend_title: "Backend Specialist",
       whatido_backend_desc: "Architecting robust APIs and server-side logic using Python, FastAPI, Django, and Flask.",
@@ -97,7 +98,13 @@ var i18n = {
       contact_title: "Let's Work Together.",
       contact_desc: "Feel free to reach out for collaborations or project inquiries.",
       contact_phone_label: "Phone Number",
-      contact_connect: "Connect"
+      contact_connect: "Connect",
+      // Courses
+      courses_label: "Certifications",
+      courses_title_html: 'Courses & <span class="sec-word">Certifications</span>',
+      courses_show_more: "Show All Courses",
+      courses_show_less: "Show Less",
+      course_view_cert: "View Certificate"
     },
     es: {
       // Page meta
@@ -130,6 +137,7 @@ var i18n = {
       about_degree_value: "Ingeniería de Software (En curso)",
       about_location_label: "Ubicación",
       about_cv_btn: "Descargar CV",
+      about_cv_url: "CV/cv_daniel_bobadilla_espanol.pdf",
       // What I Do
       whatido_backend_title: "Especialista Backend",
       whatido_backend_desc: "Arquitectando APIs robustas y lógica de servidor usando Python, FastAPI, Django y Flask.",
@@ -182,7 +190,13 @@ var i18n = {
       contact_title: "Trabajemos Juntos.",
       contact_desc: "No dudes en contactarme para colaboraciones o consultas de proyectos.",
       contact_phone_label: "Teléfono",
-      contact_connect: "Conectar"
+      contact_connect: "Conectar",
+      // Courses
+      courses_label: "Certificaciones",
+      courses_title_html: 'Cursos y <span class="sec-word">Certificaciones</span>',
+      courses_show_more: "Ver todos los cursos",
+      courses_show_less: "Ver menos",
+      course_view_cert: "Ver Certificado"
     }
   },
 
@@ -190,7 +204,110 @@ var i18n = {
   htmlKeys: [
     'about_title_html', 'about_tech_1_html', 'about_tech_2_html',
     'about_tech_3_html', 'about_tech_4_html', 'portfolio_title_html',
-    'resume_title_html'
+    'resume_title_html', 'courses_title_html'
+  ],
+
+  courses: [
+    {
+      title: { en: "FastAPI: Fundamentals, Path Operations and Validations", es: "FastAPI: Fundamentos, Path Operations y Validaciones" },
+      issuer: "Platzi",
+      url: "https://platzi.com/p/danielbobadilla/curso/2513-fastapi/diploma/detalle/"
+    },
+    {
+      title: { en: "FastAPI: Modularization, Advanced Data and Errors", es: "FastAPI: Modularización, Datos Avanzados y Errores" },
+      issuer: "Platzi",
+      url: "https://platzi.com/p/danielbobadilla/curso/2514-fastapi-modularizacion-datos/diploma/detalle/"
+    },
+    {
+      title: { en: "Professional Python Course", es: "Curso Profesional de Python" },
+      issuer: "Platzi",
+      url: "https://platzi.com/p/danielbobadilla/curso/2397-python-profesional/diploma/detalle/"
+    },
+    {
+      title: { en: "Practical Python Course: CRUD Creation", es: "Curso Práctico de Python: Creación de un CRUD" },
+      issuer: "Platzi",
+      url: "https://platzi.com/p/danielbobadilla/curso/1378-python-practico/diploma/detalle/"
+    },
+    {
+      title: { en: "Basic Python Course", es: "Curso Básico de Python" },
+      issuer: "Platzi",
+      url: "https://platzi.com/p/danielbobadilla/curso/1937-python/diploma/detalle/"
+    },
+    {
+      title: { en: "Flask Course", es: "Curso de Flask" },
+      issuer: "Platzi",
+      url: "https://platzi.com/p/danielbobadilla/curso/1540-course/diploma/detalle/"
+    },
+    {
+      title: { en: "Intermediate Django: Testing, Static Files, Django Admin", es: "Curso de Django Intermedio: Testing, Static Files, Django Admin" },
+      issuer: "Platzi",
+      url: "https://platzi.com/p/danielbobadilla/curso/2728-django-intermedio/diploma/detalle/"
+    },
+    {
+      title: { en: "Basic Django Course", es: "Curso Básico de Django" },
+      issuer: "Platzi",
+      url: "https://platzi.com/p/danielbobadilla/curso/2694-django/diploma/detalle/"
+    },
+    {
+      title: { en: "Algorithmic Complexity with Python", es: "Curso de Complejidad Algorítmica con Python" },
+      issuer: "Platzi",
+      url: "https://platzi.com/p/danielbobadilla/curso/1775-algoritmos-python/diploma/detalle/"
+    },
+    {
+      title: { en: "Practical SQL and MySQL Course", es: "Curso Práctico de SQL y MySQL" },
+      issuer: "Platzi",
+      url: "https://platzi.com/p/danielbobadilla/curso/1272-sql-mysql/diploma/detalle/"
+    },
+    {
+      title: { en: "Practical SQL Course", es: "Curso Práctico de SQL" },
+      issuer: "Platzi",
+      url: "https://platzi.com/p/danielbobadilla/curso/2059-practico-sql/diploma/detalle/"
+    },
+    {
+      title: { en: "Python Programming Fundamentals", es: "Fundamentos de Programación con Python" },
+      issuer: "Misión TIC 2022 / U. Sergio Arboleda",
+      url: "image/certificates/Daniel_Yecid_Bobadilla_Avila-sign_12.pdf"
+    },
+    {
+      title: { en: "Basic Java Programming", es: "Programación Básica con Lenguaje Java" },
+      issuer: "Misión TIC 2022 / U. Sergio Arboleda",
+      url: "image/certificates/Daniel_Yecid__Bobadilla_Auvila-sign_1.pdf"
+    },
+    {
+      title: { en: "Python 101 for Data Science", es: "Python 101 for Data Science" },
+      issuer: "Cognitive Class (IBM)",
+      url: "https://courses.cognitiveclass.ai/certificates/b89f5778efc3487fbdfa49029b6b9d7d"
+    },
+    {
+      title: { en: "Introduction to Google Cloud", es: "Introducción al mundo de Google Cloud" },
+      issuer: "Netzun",
+      url: "image/certificates/certificate.pdf"
+    },
+    {
+      title: { en: "Professional Git and GitHub Course", es: "Curso Profesional de Git y GitHub" },
+      issuer: "Platzi",
+      url: "https://platzi.com/p/danielbobadilla/curso/1557-git-github/diploma/detalle/"
+    },
+    {
+      title: { en: "Introduction to Web Development I & II", es: "Introducción Al Desarrollo Web I y II" },
+      issuer: "Google Activate",
+      url: "image/certificates/certificado (1).pdf"
+    },
+    {
+      title: { en: "Cloud Computing", es: "Cloud Computing" },
+      issuer: "Google Activate",
+      url: "image/certificates/certificado (3).pdf"
+    },
+    {
+      title: { en: "Mobile Apps Development", es: "Desarrollo De Apps Móviles" },
+      issuer: "Google Activate",
+      url: "image/certificates/certificado.pdf"
+    },
+    {
+      title: { en: "Angular & NodeJS in Production - VPS Setup", es: "Angular y NodeJS en producción - Configurar un servidor VPS" },
+      issuer: "Udemy",
+      url: "https://www.udemy.com/certificate/UC-07688cd2-8a4e-4c06-b607-4f8c85edf587/"
+    }
   ],
 
   init: function () {
@@ -215,6 +332,13 @@ var i18n = {
       e.stopPropagation();
       var newLang = self.currentLang === 'en' ? 'es' : 'en';
       self.switchLanguage(newLang);
+    });
+
+    $(document).on('click', '#btn-show-more-courses', function (e) {
+      e.preventDefault();
+      var container = $('#courses-container');
+      container.toggleClass('showing-all');
+      self.renderCourses();
     });
   },
 
@@ -257,6 +381,54 @@ var i18n = {
         }
       }
     });
+
+    // Apply href translations
+    $('[data-i18n-href]').each(function () {
+      var key = $(this).attr('data-i18n-href');
+      if (translations[key] !== undefined) {
+        $(this).attr('href', translations[key]);
+      }
+    });
+
+    this.renderCourses();
+  },
+
+  renderCourses: function () {
+    var container = $('#courses-container');
+    if (!container.length) return;
+    
+    var self = this;
+    var translations = this.translations[this.currentLang];
+    var isShowingAll = container.hasClass('showing-all');
+    
+    container.empty();
+    
+    this.courses.forEach(function (course, index) {
+      var isHidden = !isShowingAll && index >= 6;
+      var card = $('<div class="course-card' + (isHidden ? ' hidden' : '') + '"></div>');
+      
+      var icon = $('<div class="course-icon"><i class="icofont-certificate-alt-1"></i></div>');
+      var info = $('<div class="course-info"></div>');
+      
+      var title = $('<h4>' + course.title[self.currentLang] + '</h4>');
+      var issuer = $('<p>' + course.issuer + '</p>');
+      var linkText = translations.course_view_cert || "View Certificate";
+      var link = $('<a href="' + course.url + '" target="_blank" class="course-link">' + linkText + '</a>');
+      
+      info.append(title).append(issuer).append(link);
+      card.append(icon).append(info);
+      container.append(card);
+    });
+
+    var btn = $('#btn-show-more-courses');
+    if (this.courses.length <= 6) {
+      btn.hide();
+    } else {
+      btn.show();
+      var moreText = translations.courses_show_more || "Show All Courses";
+      var lessText = translations.courses_show_less || "Show Less";
+      btn.text(isShowingAll ? lessText : moreText);
+    }
   },
 
   updateToggleButtons: function () {
