@@ -25,9 +25,9 @@
     <link href="css/vendor/owl.carousel.min.css" rel="stylesheet">
     <link href="css/vendor/owl.theme.default.min.css" rel="stylesheet">
     <!-- MAIN CSS -->
-    <link href="css/dark.css" rel="stylesheet">
+    <link href="css/dark.css?v=1.1" rel="stylesheet">
     <!-- RESPONSIVE CSS -->
-    <link href="css/responsive.css" rel="stylesheet">
+    <link href="css/responsive.css?v=1.1" rel="stylesheet">
     <style>
         /* Language Toggle Button */
         .lang-toggle {
@@ -80,6 +80,84 @@
         /* Smooth text transition for language change */
         [data-i18n] {
             transition: opacity 0.2s ease;
+        }
+
+        /* COURSES SECTION STYLES */
+        #wrap-courses {
+            background: #1a1a1a !important;
+            position: relative;
+        }
+        .courses-grid {
+            display: grid !important;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
+            gap: 25px !important;
+            margin-top: 50px !important;
+        }
+        .course-card {
+            background: rgba(255, 255, 255, 0.03) !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            border-radius: 20px !important;
+            padding: 30px !important;
+            display: flex !important;
+            align-items: flex-start !important;
+            gap: 20px !important;
+            transition: all 0.3s ease !important;
+            backdrop-filter: blur(10px) !important;
+            -webkit-backdrop-filter: blur(10px) !important;
+        }
+        .course-card:hover {
+            transform: translateY(-5px) !important;
+            border-color: #4facfe !important;
+            background: rgba(255, 255, 255, 0.05) !important;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+        }
+        .course-icon {
+            font-size: 32px !important;
+            color: #4facfe !important;
+            background: rgba(79, 172, 254, 0.1) !important;
+            width: 60px !important;
+            height: 60px !important;
+            border-radius: 15px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            flex-shrink: 0 !important;
+        }
+        .course-info h4 {
+            font-size: 18px !important;
+            font-weight: 700 !important;
+            margin-bottom: 8px !important;
+            color: #fff !important;
+            line-height: 1.4 !important;
+        }
+        .course-info p {
+            font-size: 14px !important;
+            color: rgba(255, 255, 255, 0.5) !important;
+            margin-bottom: 15px !important;
+            font-weight: 500 !important;
+        }
+        .course-link {
+            font-size: 12px !important;
+            text-transform: uppercase !important;
+            letter-spacing: 1px !important;
+            font-weight: 700 !important;
+            color: #4facfe !important;
+            text-decoration: none !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 5px !important;
+        }
+        .course-link:after {
+            content: '\ee6e' !important;
+            font-family: 'IcoFont' !important;
+        }
+        .course-card.hidden {
+            display: none !important;
+        }
+        @media (max-width: 768px) {
+            .courses-grid {
+                grid-template-columns: 1fr !important;
+            }
         }
     </style>
 </head>
@@ -682,7 +760,7 @@
     <script src="javascript/vendor/isotope.js"></script>
     <script src="javascript/vendor/typed.js"></script>
     <script src="javascript/vendor/jarallax.js"></script>
-    <script src="javascript/main.js"></script>
+    <script src="javascript/main.js?v=1.1"></script>
 </body>
 
 </html>
