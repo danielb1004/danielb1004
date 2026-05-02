@@ -2,75 +2,638 @@
 <html lang="en">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Daniel Bobadilla</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="Simplixe - Personal Portfolio Landing Page Html">
-    <meta name="author" content="ramahardian">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel Bobadilla | Software Engineer</title>
+    <meta name="description" content="Daniel Bobadilla - Software Engineer Portfolio. Backend Developer, Python Expert, AI & LLM Integration.">
+    <meta name="author" content="Daniel Bobadilla">
+    <!-- FAVICON ICON  -->
     <link rel="shortcut icon" href="image/asset/favicon.png">
-    <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
-    <link rel="stylesheet" href="a.css" type="text/css">
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- FONTAWESOME FONT -->
+    <link href="css/vendor/icofont.min.css" rel="stylesheet">
+    <!-- BOOTSTRAP -->
+    <link href="css/vendor/bootstrap.min.css" rel="stylesheet">
+    <!-- MAGNIFIC POPUP -->
+    <link href="css/vendor/magnific.css" rel="stylesheet">
+    <!-- HEADLINE ANIMATED -->
+    <link href="css/vendor/headlineanimated.css" rel="stylesheet">
+    <!-- OWL CARAOUSEL CSS -->
+    <link href="css/vendor/owl.carousel.min.css" rel="stylesheet">
+    <link href="css/vendor/owl.theme.default.min.css" rel="stylesheet">
+    <!-- MAIN CSS -->
+    <link href="css/dark.css" rel="stylesheet">
+    <!-- RESPONSIVE CSS -->
+    <link href="css/responsive.css" rel="stylesheet">
+    <style>
+        /* Language Toggle Button */
+        .lang-toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-left: 30px;
+            vertical-align: middle;
+        }
+        .lang-toggle:hover {
+            border-color: #4facfe;
+            background: rgba(79, 172, 254, 0.15);
+            box-shadow: 0 0 15px rgba(79, 172, 254, 0.2);
+        }
+        .lang-toggle .lang-flag {
+            font-size: 18px;
+            line-height: 1;
+        }
+        .lang-toggle .lang-label {
+            pointer-events: none;
+        }
+        /* Mobile lang toggle */
+        .lang-toggle-mobile {
+            display: none;
+            margin: 20px 30px 0 0;
+            text-align: right;
+        }
+        .lang-toggle-mobile .lang-toggle {
+            margin-left: 0;
+        }
+        /* Desktop nav alignment */
+        .navigation-list .lang-item {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        /* Smooth text transition for language change */
+        [data-i18n] {
+            transition: opacity 0.2s ease;
+        }
+    </style>
 </head>
 
-<body cz-shortcut-listen="true">
+<body data-spy="scroll" data-target=".navigation-wrap" data-offset="1">
+    <!-- PRELOADER -->
+    <div class="preloader">
+        <div class="ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!-- MAIN WRAP -->
+    <div class="main-wrap">
+        <!-- SMALL MENU -->
+        <div class="overlay-fade"></div>
+        <div class="wrap-mobilemenu">
+            <button id="closesmenu" class="button-menu">
+                <i class="icofont-close-squared-alt"></i>
+            </button>
+            <nav class="menu-mobile">
+                <ul class="navigation-list">
+                    <li><a class="nav-link" href="#about-wrap" data-i18n="nav_about">About me</a></li>
+                    <li><a class="nav-link" href="#portfolio-wrap" data-i18n="nav_work">My work</a></li>
+                    <li><a class="nav-link" href="#wrap-resume" data-i18n="nav_resume">My Resume</a></li>
+                    <li><a class="nav-link" href="#contact-section" data-i18n="nav_contact">Contact</a></li>
+                </ul>
+                <div class="lang-toggle-mobile">
+                    <button class="lang-toggle" id="lang-toggle-mobile" aria-label="Switch language">
+                        <span class="lang-flag">🇪🇸</span>
+                        <span class="lang-label">ES</span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+        <!-- HEADER WRAP -->
+        <header id="header-wrap">
+            <div class="main-headerwrap container">
+                <div class="row align-items-center">
+                    <div class="col-lg-3">
+                        <div class="logo-wrap">
+                            <img src="image/asset/logo.png" alt="logo" />
+                        </div>
+                    </div>
+                    <div class="col-lg-9 navigation-big">
+                        <nav class="navigation-wrap">
+                            <ul class="navigation-list">
+                                <li><a class="nav-link" href="#about-wrap" data-i18n="nav_about">About me</a></li>
+                                <li><a class="nav-link" href="#portfolio-wrap" data-i18n="nav_work">My work</a></li>
+                                <li><a class="nav-link" href="#wrap-resume" data-i18n="nav_resume">My Resume</a></li>
+                                <li><a class="nav-link" href="#contact-section" data-i18n="nav_contact">Contact</a></li>
+                                <li class="lang-item">
+                                    <button class="lang-toggle" id="lang-toggle-desktop" aria-label="Switch language">
+                                        <span class="lang-flag">🇪🇸</span>
+                                        <span class="lang-label">ES</span>
+                                    </button>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <button id="openmenu" class="button-menu">
+                        <i class="icofont-navigation-menu"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+        <!-- END HEADER WRAP -->
+        <!-- HERO WRAP -->
+        <section id="wrap-hero" class="jarallax" style="background: url('image/hero/me.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+            <div class="d-flex align-items-center justify-content-center inner-herocontent">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div class="detail-herowrap">
+                                <h1>Daniel <span class="sec-word">Bobadilla</span></h1>
+                                <div class="sosmed-home head-sosmed">
+                                    <ul class="sosmed-list">
+                                        <li><a href="https://www.linkedin.com/in/daniel-bobadilla-b40735160/"><i class="icofont-linkedin"></i> </a></li>
+                                        <li><a href="https://github.com/danielb1004"><i class="icofont-github"></i> </a></li>
 
-
-    <div class="main-content">
-        <div class="header">
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="sec-detailherowrap">
+                                <p class="title-detail" data-i18n="hero_intro_label">Introduction</p>
+                                <h3><span data-i18n="hero_iam">I am</span>
+                                    <span class="wrap-typed">
+                                        <span id="typed-text"></span>
+                                    </span>
+                                </h3>
+                                <div class="mini-detail">
+                                    <p data-i18n="hero_desc">
+                                        Backend Developer focused on building high-performance systems and automation solutions.
+                                    </p>
+                                </div>
+                                <div class="big-text r-text li-text">01</div>
+                                <a href="#about-wrap" class="button-link dark-b llinks" data-i18n="hero_cta">Explore More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- END HERO WRAP -->
+        <!-- ABOUT ME WRAP -->
+        <section id="about-wrap" class="padtopbottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <div class="big-text l-text da-text ">02</div>
+                        <div class="about-detailwrap offset-lg-4">
+                            <p class="title-detail" data-i18n="about_label">Brief Story</p>
+                            <h3 data-i18n="about_title_html">About <span class="sec-word">me</span></h3>
+                            <div class="mini-detail">
+                                <p data-i18n="about_p1">
+                                    I am a Software Engineer driven by the challenge of building high-performance backend systems and integrating cutting-edge AI technologies. My expertise lies in bridging the gap between robust server-side logic and real-time intelligent automation.
+                                </p>
+                                <p data-i18n="about_p2">
+                                    My mastery of Python extends beyond standard web development; I specialize in leveraging its ecosystem to process complex data and deploy AI-driven features. I have a proven track record of implementing Generative AI (LLMs), Computer Vision, and Real-time Audio Processing into functional business tools.
+                                </p>
+                                <div class="technical-expertise mt-4">
+                                    <h4 class="mb-3" style="font-size: 1.1rem; font-weight: 600; color: var(--accent-color);" data-i18n="about_tech_title">Technical Expertise:</h4>
+                                    <ul style="list-style: none; padding-left: 0;">
+                                        <li class="mb-2" data-i18n="about_tech_1_html"><strong>Advanced Python Development:</strong> Deep proficiency in FastAPI and Flask, focusing on asynchronous programming, security, and scalable architecture.</li>
+                                        <li class="mb-2" data-i18n="about_tech_2_html"><strong>AI &amp; Machine Learning Integration:</strong> Implementation of Large Language Models (LLMs) via Groq &amp; Llama, and specialized experience in Speech-to-Text (Whisper) for automated workflows.</li>
+                                        <li class="mb-2" data-i18n="about_tech_3_html"><strong>Computer Vision &amp; Media:</strong> Real-time visual data processing using MediaPipe, camera control automation, and multimedia synchronization.</li>
+                                        <li class="mb-2" data-i18n="about_tech_4_html"><strong>Ecosystem &amp; Full-stack:</strong> Intermediate JavaScript for dynamic logic, high-level HubSpot API integrations, and advanced SQL (PostgreSQL, MariaDB) for complex data structures.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="mini-detailabout">
+                                <div class="row">
+                                    <div class="col-lg-6 ">
+                                        <div class="inner-detailabout">
+                                            <p data-i18n="about_fullname_label">Full Name</p>
+                                            <h3>Daniel Yecid Bobadilla Avila</h3>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="inner-detailabout">
+                                            <p data-i18n="about_dob_label">Date of birth </p>
+                                            <h3 data-i18n="about_dob_value">October 4, 2002</h3>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="inner-detailabout">
+                                            <p data-i18n="about_degree_label">Degree </p>
+                                            <h3 data-i18n="about_degree_value">Software Engineering (In progress)</h3>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="inner-detailabout">
+                                            <p data-i18n="about_location_label">Location </p>
+                                            <h3>Ibagué, Colombia</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="CV/Recurso 1.pdf" class="button-link dark-b llinks" data-i18n="about_cv_btn">Download CV</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="wrap-imageabout">
+                            <img src="image/hero/me2.png" alt="Daniel Bobadilla" />
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <!-- WHAT IDO -->
+                        <div class="mini-detail whatido ">
+                            <div id="wrapido" class="owl-carousel owl-theme">
+                                <!-- WHAT IDO ITEM -->
+                                <div class="wrap-whatido">
+                                    <div class="wrap-whatidodetail">
+                                        <div class="inner-detailido">
+                                            <i class="icofont-code-alt icon-w"></i>
+                                            <h3 data-i18n="whatido_backend_title">Backend Specialist</h3>
+                                            <p data-i18n="whatido_backend_desc">Architecting robust APIs and server-side logic using Python, FastAPI, Django, and Flask.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- WHAT IDO ITEM -->
+                                <div class="wrap-whatido">
+                                    <div class="wrap-whatidodetail">
+                                        <div class="inner-detailido">
+                                            <i class="icofont-automation icon-w"></i>
+                                            <h3 data-i18n="whatido_ai_title">AI &amp; Automation</h3>
+                                            <p data-i18n="whatido_ai_desc">Integrating AI models and LLMs to automate workflows and optimize business processes.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- WHAT IDO ITEM -->
+                                <div class="wrap-whatido">
+                                    <div class="wrap-whatidodetail">
+                                        <div class="inner-detailido">
+                                            <i class="icofont-database icon-w"></i>
+                                            <h3>SQL &amp; NoSQL</h3>
+                                            <p data-i18n="whatido_db_desc">Designing and managing complex database architectures for high-availability applications.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END WHAT IDO -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- PORTFOLIo WRAP -->
+        <section id="portfolio-wrap">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                    <div class="title">
-                        <h1>Elige el idioma
-                        </br>
-                        Select the language
-                        </h1>
-                        <p></p>
+                        <div class="big-text r-text da-text ">03</div>
+                        <div class="wrap-titleporto">
+                            <p class="title-detail" data-i18n="portfolio_label">portfolio</p>
+                            <h3 data-i18n="portfolio_title_html">Featured <span class="sec-word">Work</span></h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="mini-detail">
+                            <p data-i18n="portfolio_desc">
+                                A selection of projects that demonstrate my software engineering expertise.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="porto-content">
+                            <!--  PROJECT CARD: COMUNION APP -->
+                            <div class="porto-item">
+                                <a href="#comunion-detail" class="project-card-link project-detail-popup">
+                                    <div class="project-card">
+                                        <div class="project-card-inner">
+                                            <div class="project-logo">
+                                                <img src="image/portfolio/Comunion.png" alt="Comunion App Logo" />
+                                            </div>
+                                            <div class="project-card-info">
+                                                <h3>Comunion App</h3>
+                                                <p data-i18n="portfolio_comunion_desc">Full-stack church platform with live Bible projection and synchronized reader.</p>
+                                                <span class="btn-more" data-i18n="portfolio_view_details">View Details</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <!-- Hidden Detailed Content for Modal -->
+                                <div id="comunion-detail" class="white-popup mfp-hide">
+                                    <div class="project-modal-content">
+                                        <div class="modal-header">
+                                            <h3>Comunion App</h3>
+                                            <a href="https://comunionchurch.com" target="_blank" class="live-link"><i class="icofont-external-link"></i> Visit Site</a>
+                                        </div>
+                                        <p class="modal-desc" data-i18n="portfolio_comunion_detail">Ecosistema completo para iglesias...</p>
+                                        <div class="modal-tech">
+                                            <h4 data-i18n="portfolio_built_with">Built With:</h4>
+                                            <p data-i18n="portfolio_comunion_tech">FastAPI, Vue.js, Android (Native/Flutter)...</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END PROJECT CARD -->
+
+                            <!--  PROJECT CARD: CLIPER -->
+                            <div class="porto-item">
+                                <a href="#cliper-detail" class="project-card-link project-detail-popup">
+                                    <div class="project-card">
+                                        <div class="project-card-inner">
+                                            <div class="project-logo">
+                                                <img src="image/portfolio/Cliper.png" alt="Cliper Logo" />
+                                            </div>
+                                            <div class="project-card-info">
+                                                <h3>Cliper</h3>
+                                                <p data-i18n="portfolio_cliper_desc">AI tool to convert long videos into viral reels with 16:9 intelligent tracking.</p>
+                                                <span class="btn-more" data-i18n="portfolio_view_details">View Details</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <!-- Hidden Detailed Content for Modal -->
+                                <div id="cliper-detail" class="white-popup mfp-hide">
+                                    <div class="project-modal-content">
+                                        <div class="modal-header">
+                                            <h3>Cliper</h3>
+                                        </div>
+                                        <p class="modal-desc" data-i18n="portfolio_cliper_detail">Advanced AI suite designed to transform long-form video into viral short-form content...</p>
+                                        <div class="modal-tech">
+                                            <h4 data-i18n="portfolio_built_with">Built With:</h4>
+                                            <p data-i18n="portfolio_cliper_tech">Python, Multi-Agent AI, Computer Vision...</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END PROJECT CARD -->
+
+                            <!--  PROJECT CARD: SHIFT -->
+                            <div class="porto-item">
+                                <a href="#shift-detail" class="project-card-link project-detail-popup">
+                                    <div class="project-card">
+                                        <div class="project-card-inner">
+                                            <div class="project-logo">
+                                                <i class="icofont-key-hole" style="font-size: 50px; color: #4facfe;"></i>
+                                            </div>
+                                            <div class="project-card-info">
+                                                <h3>Shift</h3>
+                                                <p data-i18n="portfolio_shift_desc">Licensing and internal business management system.</p>
+                                                <span class="btn-more" data-i18n="portfolio_view_details">View Details</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <!-- Hidden Detailed Content for Modal -->
+                                <div id="shift-detail" class="white-popup mfp-hide">
+                                    <div class="project-modal-content">
+                                        <div class="modal-header">
+                                            <h3>Shift</h3>
+                                        </div>
+                                        <p class="modal-desc" data-i18n="portfolio_shift_detail">Comprehensive system for license control...</p>
+                                        <div class="modal-tech">
+                                            <h4 data-i18n="portfolio_built_with">Built With:</h4>
+                                            <p data-i18n="portfolio_shift_tech">Flask, Python, SQL, REST APIs.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END PROJECT CARD -->
+
+                            <!--  PROJECT CARD: RETENCIONES -->
+                            <div class="porto-item">
+                                <a href="#retenciones-detail" class="project-card-link project-detail-popup">
+                                    <div class="project-card">
+                                        <div class="project-card-inner">
+                                            <div class="project-logo">
+                                                <i class="icofont-file-document" style="font-size: 50px; color: #4facfe;"></i>
+                                            </div>
+                                            <div class="project-card-info">
+                                                <h3>Certificados</h3>
+                                                <p data-i18n="portfolio_retenciones_desc">Automated application for downloading tax retention certificates.</p>
+                                                <span class="btn-more" data-i18n="portfolio_view_details">View Details</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <!-- Hidden Detailed Content for Modal -->
+                                <div id="retenciones-detail" class="white-popup mfp-hide">
+                                    <div class="project-modal-content">
+                                        <div class="modal-header">
+                                            <h3>Certificados de Retenciones</h3>
+                                        </div>
+                                        <p class="modal-desc" data-i18n="portfolio_retenciones_detail">A specialized tool designed to automate...</p>
+                                        <div class="modal-tech">
+                                            <h4 data-i18n="portfolio_built_with">Built With:</h4>
+                                            <p data-i18n="portfolio_retenciones_tech">Flask, Python Automation, SQL.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END PROJECT CARD -->
+                        </div>
                     </div>
                 </div>
-                </div>
             </div>
-        </div>
-
-        <div class="demo-content">
-            <div class="container page-block">
+        </section>
+        <!-- RESUME -->
+        <section id="wrap-resume">
+            <div class="container">
                 <div class="row">
-                    <div class="col-sm-6 col-md-6">
-                        <div class="demo-variant">
-                            <div class="image-block">
-                                <img src="image/languages/Español.PNG"
-                                    alt="">
-                                <div class="mask">
-                                    
-                                </div>
-                            </div>
-                            <a href="dark español.html">
-                                <div class="title">
-                                    <h4>Español</h4>
-                                </div>
-                            </a>
+                    <div class="col-lg-12">
+                        <div class="big-text r-text da-text ">04</div>
+                        <div class="wrap-titleporto ">
+                            <p class="title-detail" data-i18n="resume_label">Resume</p>
+                            <h3 data-i18n="resume_title_html">Professional <span class="sec-word">Experience</span></h3>
                         </div>
                     </div>
-
-                    <div class="col-sm-6 col-md-6">
-                        <div class="demo-variant">
-                            <div class="image-block">
-                                <img src="image/languages/Ingles.PNG"
-                                    alt="">
-                                <div class="mask">
+                    <div class="col-lg-12">
+                        <div class="wrap-itemresume">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="l-side">
+                                        <h3 data-i18n="resume_job1_title">Software Developer</h3>
+                                        <p data-i18n="resume_job1_date">AUG 2022 - Present</p>
+                                        <span class="work-stat" data-i18n="resume_job1_type">Full Time</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-8">
+                                    <div class="r-side">
+                                        <h3>Softpymes SAS</h3>
+                                        <p data-i18n="resume_job1_desc">Developing scalable backend solutions using Python, Flask, and MySQL. Focused on optimizing database performance and building robust APIs for business management systems.</p>
+                                    </div>
                                 </div>
                             </div>
-                            <a href="dark.html">
-                                <div class="title">
-                                    <h4>English</h4>
+                        </div>
+                        <div class="wrap-itemresume">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="l-side">
+                                        <h3 data-i18n="resume_job2_title">Full Stack Developer</h3>
+                                        <p data-i18n="resume_job2_date">Present</p>
+                                        <span class="work-stat">Freelance</span>
+                                    </div>
                                 </div>
-                            </a>
+                                <div class="col-lg-8">
+                                    <div class="r-side">
+                                        <h3 data-i18n="resume_job2_company">Personal Projects &amp; Consulting</h3>
+                                        <p data-i18n="resume_job2_desc">Building custom web applications and automation tools. Implementing modern stacks like FastAPI, Django, and Vue.js to solve specific client needs.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="title-top">
+                            <h3 data-i18n="resume_edu_heading">Education</h3>
+                        </div>
+                        <div class="wrap-itemresume">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="l-side">
+                                        <h3 data-i18n="resume_edu_school">Manuela Beltrán University</h3>
+                                        <p data-i18n="resume_edu_date">2021 - 2027 (Expected)</p>
+                                        <span class="work-stat" data-i18n="resume_edu_status">Enrolled</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-8">
+                                    <div class="r-side">
+                                        <h3 data-i18n="resume_edu_degree">Software Engineering</h3>
+                                        <p data-i18n="resume_edu_desc">Focused on software architecture, algorithms, and advanced programming paradigms.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="title-top">
+                            <h3 data-i18n="resume_skills_heading">My Skills</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="part-col">
+                            <h3>Backend &amp; Core</h3>
+                            <p data-i18n="resume_skills_backend_desc">Main tech stack and core competencies.</p>
+                            <div class="wrap-bar">
+                                <p class="title-pp">Python &amp; FastAPI</p>
+                                <div class="skill-bar" data-valuenow="90"><span></span></div>
+                            </div>
+                            <div class="wrap-bar">
+                                <p class="title-pp">Django &amp; Flask</p>
+                                <div class="skill-bar" data-valuenow="85"><span></span></div>
+                            </div>
+                            <div class="wrap-bar">
+                                <p class="title-pp">SQL &amp; NoSQL</p>
+                                <div class="skill-bar" data-valuenow="80"><span></span></div>
+                            </div>
+                            <div class="wrap-bar">
+                                <p class="title-pp" data-i18n="resume_skills_ai_label">AI Automation (LLM Integration)</p>
+                                <div class="skill-bar" data-valuenow="75"><span></span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="part-col">
+                            <h3 data-i18n="resume_skills_frontend_title">Frontend &amp; Tools</h3>
+                            <p data-i18n="resume_skills_frontend_desc">UI development and workflow technologies.</p>
+                            <div class="wrap-bar">
+                                <p class="title-pp">HTML, CSS &amp; JavaScript</p>
+                                <div class="skill-bar" data-valuenow="92"><span></span></div>
+                            </div>
+                            <div class="wrap-bar">
+                                <p class="title-pp">Vue.js &amp; React</p>
+                                <div class="skill-bar" data-valuenow="70"><span></span></div>
+                            </div>
+                            <div class="wrap-bar">
+                                <p class="title-pp" data-i18n="resume_skills_git_label">Git &amp; Deployment</p>
+                                <div class="skill-bar" data-valuenow="85"><span></span></div>
+                            </div>
+                            <div class="wrap-bar">
+                                <p class="title-pp" data-i18n="resume_skills_english_label">English Language</p>
+                                <div class="skill-bar" data-valuenow="70"><span></span></div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div> 
+        </section>
+        <!-- CONTACT SECTION -->
+        <section id="contact-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="contact-form">
+                            <div class="title-top">
+                                <h3 data-i18n="contact_title">Let's Work Together.</h3>
+                            </div>
+                            <div class="mini-detail">
+                                <p data-i18n="contact_desc">Feel free to reach out for collaborations or project inquiries.</p>
+                            </div>
+                            <div class="detail-info">
+                                <i class="icofont-ui-dial-phone the-icon"></i>
+                                <div class="inner-detail">
+                                    <p><span data-i18n="contact_phone_label">Phone Number</span><br />+57 301 3464887 </p>
+                                </div>
+                            </div>
+                            <div class="detail-info">
+                                <i class="icofont-ui-email the-icon"></i>
+                                <div class="inner-detail">
+                                    <p>Danybavila@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 ml-auto">
+                        <div class="detail-contact">
+                            <div class="title-top">
+                                <h3 data-i18n="contact_connect">Connect</h3>
+                            </div>
+                            <div class="sosmed-home foot-sosmed">
+                                <ul class="sosmed-list">
+                                    <li><a href="https://www.linkedin.com/in/daniel-bobadilla-b40735160/"><i class="icofont-linkedin"></i> </a></li>
+                                    <li><a href="https://github.com/danielb1004"><i class="icofont-github"></i> </a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- FOOTER -->
+        <footer id="footer-wrap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <div class="wrap-title-foot">
+                            <p>© 2024 Daniel Bobadilla.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- SCROLLTOP -->
+        <a href="#" class="scroll-top">
+            <i class="icofont-arrow-up dropicon"></i>
+        </a>
+    </div>
+    <!-- JAVASCRIPT JQUERY -->
+    <script src="javascript/vendor/jquery.js"></script>
+    <script src="javascript/vendor/bootstrap.min.js"></script>
+    <script src="javascript/vendor/magnific.js"></script>
+    <script src="javascript/vendor/owl.carousel.min.js"></script>
+    <script src="javascript/vendor/isotope.js"></script>
+    <script src="javascript/vendor/typed.js"></script>
+    <script src="javascript/vendor/jarallax.js"></script>
+    <script src="javascript/main.js"></script>
 </body>
+
 </html>

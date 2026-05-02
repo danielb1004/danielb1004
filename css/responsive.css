@@ -53,6 +53,9 @@ Version       : 1.0 FREE
     .navigation-big {
         display: none;
     }
+    .lang-toggle-mobile {
+        display: block !important;
+    }
     #header-wrap {
         padding-bottom: 20px;
     }
